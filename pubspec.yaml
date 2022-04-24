@@ -39,6 +39,8 @@ dependencies:
   font_awesome_flutter: ^10.1.0
   # For brand icons
   flutter_brand_icons: ^1.1.0
+  # For video playing
+  video_player: ^2.4.0
 
 dev_dependencies:
   flutter_test:
