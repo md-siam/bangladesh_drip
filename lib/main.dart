@@ -1,7 +1,7 @@
-import 'src/signin/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
+import 'src/firebase/signin_page.dart';
 import 'src/views/home_page.dart';
 
 void main() {
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Bangladesh Drip',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.grey),
-      //home: const HomePage(),
-      home: const SignInPage(),
+      home: const HomePage(),
+      //home: const SignInPage(),
     );
   }
 }

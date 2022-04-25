@@ -1,3 +1,5 @@
+import 'signup_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -26,29 +28,30 @@ class _SignInPageState extends State<SignInPage> {
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-              padding: const EdgeInsets.all(15.0),
-              child: Column(children: [
-                Row(
-                  children: [
-                    Text(
-                      'IDENTIFICATION',
-                      style: GoogleFonts.montserrat(
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold,
-                      ),
+            padding: const EdgeInsets.all(15.0),
+            child: Column(children: [
+              Row(
+                children: [
+                  Text(
+                    'IDENTIFICATION',
+                    style: GoogleFonts.montserrat(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
                     ),
-                    const Expanded(child: SizedBox()),
-                    IconButton(
-                      onPressed: () => Navigator.pop(context),
-                      icon: const Icon(Icons.cancel),
-                    ),
-                  ],
-                ),
-                const Divider(height: 2, color: Colors.black),
-                signIn(),
-                const Divider(height: 2, color: Colors.black),
-                createAccount(),
-              ])),
+                  ),
+                  const Expanded(child: SizedBox()),
+                  IconButton(
+                    onPressed: () => Navigator.pop(context),
+                    icon: const Icon(Icons.cancel),
+                  ),
+                ],
+              ),
+              const Divider(height: 2, color: Colors.black),
+              signIn(),
+              const Divider(height: 2, color: Colors.black),
+              createAccount(context),
+            ]),
+          ),
         ),
       ),
     );
@@ -150,7 +153,7 @@ Widget signIn() => Column(
       ],
     );
 
-Widget createAccount() => Column(
+Widget createAccount(BuildContext context) => Column(
       children: [
         const SizedBox(height: 20),
         Row(
@@ -169,7 +172,12 @@ Widget createAccount() => Column(
         ),
         const SizedBox(height: 20),
         GestureDetector(
-          onTap: () {},
+          onTap: () {
+            Navigator.push(
+              context,
+              CupertinoPageRoute(builder: (context) => const SignUpPage()),
+            );
+          },
           child: Container(
             height: 40,
             width: double.infinity,
