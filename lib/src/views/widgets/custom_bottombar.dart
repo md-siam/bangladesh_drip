@@ -9,7 +9,7 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 300,
+      height: 310,
       width: double.infinity,
       color: Colors.black,
       child: Column(
@@ -94,6 +94,8 @@ class CustomBottomBar extends StatelessWidget {
               ),
             ],
           ),
+          Image.asset('assets/images/payments.png'),
+          const SizedBox(height: 10),
           Text(
             '© Bangladesh Drip. Design & Developed ♥\nBY 2A IT LIMITED',
             style: GoogleFonts.montserrat(color: Colors.grey),

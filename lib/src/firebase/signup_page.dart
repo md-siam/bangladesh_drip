@@ -19,30 +19,32 @@ class _SignUpPageState extends State<SignUpPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.all(15.0),
-          child: Column(
-            children: [
-              Row(
-                children: [
-                  Text(
-                    'REGISTRATION',
-                    style: GoogleFonts.montserrat(
-                      fontSize: 24,
-                      fontWeight: FontWeight.bold,
+      body: SafeArea(
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Column(
+              children: [
+                Row(
+                  children: [
+                    Text(
+                      'REGISTRATION',
+                      style: GoogleFonts.montserrat(
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
-                  ),
-                  const Expanded(child: SizedBox()),
-                  IconButton(
-                    onPressed: () => Navigator.pop(context),
-                    icon: const Icon(Icons.cancel),
-                  ),
-                ],
-              ),
-              const Divider(height: 2, color: Colors.black),
-              signUp(),
-            ],
+                    const Expanded(child: SizedBox()),
+                    IconButton(
+                      onPressed: () => Navigator.pop(context),
+                      icon: const Icon(Icons.cancel),
+                    ),
+                  ],
+                ),
+                const Divider(height: 2, color: Colors.black),
+                signUp(),
+              ],
+            ),
           ),
         ),
       ),
@@ -148,9 +150,13 @@ Widget signUp() => Column(
         TextFormField(
           autofocus: false,
           controller: mobileController,
+          keyboardType: TextInputType.number,
           validator: (value) {
             if (value!.isEmpty) {
               return ("Please Enter Your Mobile Number");
+            } // regular expression for mobile number validation
+            if (!RegExp(r"^(?:\+88||01)?(?:\d{10}|\d{13})$").hasMatch(value)) {
+              return ("Please Enter a valid email");
             }
             return null;
           },
@@ -161,7 +167,7 @@ Widget signUp() => Column(
           decoration: InputDecoration(
             prefixIcon: const Icon(Icons.phone_iphone),
             contentPadding: const EdgeInsets.fromLTRB(20, 15, 20, 15),
-            hintText: "Mobile",
+            hintText: "Mobile (i.e. 01700112223)",
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(10),
             ),

@@ -55,7 +55,7 @@ class BasicOverlayWidget extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (videoNum == 1)
+              if (videoNum == 0)
                 Text(
                   'TAMBOUR STREET DIVER',
                   style: GoogleFonts.montserrat(
@@ -64,7 +64,7 @@ class BasicOverlayWidget extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-              if (videoNum == 2)
+              if (videoNum == 1)
                 Text(
                   'LV VOLT',
                   style: GoogleFonts.montserrat(
@@ -73,7 +73,7 @@ class BasicOverlayWidget extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-              if (videoNum == 3)
+              if (videoNum == 2)
                 Text(
                   'SPRING IN THE CITY',
                   style: GoogleFonts.montserrat(
@@ -82,7 +82,7 @@ class BasicOverlayWidget extends StatelessWidget {
                     color: Colors.white,
                   ),
                 ),
-              if (videoNum == 4)
+              if (videoNum == 3)
                 Text(
                   'SPELL ON YOU WITH LÉA\nSEYDOUX',
                   style: GoogleFonts.montserrat(
