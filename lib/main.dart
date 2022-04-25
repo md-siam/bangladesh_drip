@@ -1,4 +1,4 @@
-import 'package:bangladesh_drip/src/login/login_page.dart';
+import 'src/signin/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Bangladesh Drip',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: const HomePage(),
-      //home: const LoginPage(),
+      //home: const HomePage(),
+      home: const SignInPage(),
     );
   }
 }
