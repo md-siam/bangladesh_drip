@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 
-import '../widgets/player_widget.dart';
+import 'widgets/custom_appbar.dart';
+import 'widgets/custom_bottombar.dart';
+import 'widgets/player_widget.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -19,6 +21,7 @@ class _HomePageState extends State<HomePage> {
   final videoURL2 = 'https://bangladesh-drip.2aitautomation.com/img/03.mp4';
   final videoURL3 = 'https://bangladesh-drip.2aitautomation.com/img/4.mp4';
   final videoURL4 = 'https://bangladesh-drip.2aitautomation.com/img/5.mp4';
+  final sc_controller = ScrollController();
 
   @override
   void initState() {
@@ -59,17 +62,31 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
+          controller: sc_controller,
           child: Column(
             children: [
-              Container(
-                height: 60,
-                color: Colors.white,
-                child: Row(children: [Image.asset('name')],),
+              const CustomAppBar(),
+              PlayerWidget(
+                videoNum: 1,
+                vp_controller: _controller1,
+                sc_controller: sc_controller,
               ),
-              // PlayerWidget(controller: _controller1),
-              // PlayerWidget(controller: _controller2),
-              // PlayerWidget(controller: _controller3),
-              // PlayerWidget(controller: _controller4),
+              PlayerWidget(
+                videoNum: 2,
+                vp_controller: _controller2,
+                sc_controller: sc_controller,
+              ),
+              PlayerWidget(
+                videoNum: 3,
+                vp_controller: _controller3,
+                sc_controller: sc_controller,
+              ),
+              PlayerWidget(
+                videoNum: 4,
+                vp_controller: _controller4,
+                sc_controller: sc_controller,
+              ),
+              const CustomBottomBar()
             ],
           ),
         ),

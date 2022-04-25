@@ -35,10 +35,6 @@ dependencies:
   cupertino_icons: ^1.0.2
   # For fonts
   google_fonts: ^2.3.1
-  # For icons
-  font_awesome_flutter: ^10.1.0
-  # For brand icons
-  flutter_brand_icons: ^1.1.0
   # For video playing
   video_player: ^2.4.0
 
