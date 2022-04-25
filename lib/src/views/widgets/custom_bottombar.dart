@@ -9,7 +9,7 @@ class CustomBottomBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 350,
+      height: 300,
       width: double.infinity,
       color: Colors.black,
       child: Column(
