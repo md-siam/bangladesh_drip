@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -12,22 +13,21 @@ class LoginPage extends StatefulWidget {
 final TextEditingController emailController = TextEditingController();
 final TextEditingController passwordController = TextEditingController();
 
+// firebase
+final _auth = FirebaseAuth.instance;
+
+// string for displaying the error Message
+String? errorMessage;
+
 class _LoginPageState extends State<LoginPage> {
-  // firebase
-  //final _auth = FirebaseAuth.instance;
-
-  // string for displaying the error Message
-  String? errorMessage;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
           child: Padding(
-            padding: const EdgeInsets.all(15.0),
-            child: Column(
-              children: [
+              padding: const EdgeInsets.all(15.0),
+              child: Column(children: [
                 Row(
                   children: [
                     Text(
@@ -48,9 +48,7 @@ class _LoginPageState extends State<LoginPage> {
                 signIn(),
                 const Divider(height: 2, color: Colors.black),
                 createAccount(),
-              ],
-            ),
-          ),
+              ])),
         ),
       ),
     );

@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
       title: 'Bangladesh Drip',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.grey),
-      //home: const HomePage(),
-      home: const LoginPage(),
+      home: const HomePage(),
+      //home: const LoginPage(),
     );
   }
 }
