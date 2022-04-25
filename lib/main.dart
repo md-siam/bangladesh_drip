@@ -1,3 +1,4 @@
+import 'package:bangladesh_drip/src/login/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -20,8 +21,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Bangladesh Drip',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: const HomePage(),
+      theme: ThemeData(primarySwatch: Colors.grey),
+      //home: const HomePage(),
+      home: const LoginPage(),
     );
   }
 }

@@ -35,7 +35,9 @@ class BasicOverlayWidget extends StatelessWidget {
                 ),
                 IconButton(
                   icon: Icon(
-                    vp_controller.value.isPlaying ? Icons.pause : Icons.play_arrow,
+                    vp_controller.value.isPlaying
+                        ? Icons.pause
+                        : Icons.play_arrow,
                     color: Colors.white,
                   ),
                   onPressed: () {
@@ -94,7 +96,7 @@ class BasicOverlayWidget extends StatelessWidget {
                 onTap: () {
                   sc_controller.animateTo(
                     0,
-                    duration: const Duration(seconds: 1),
+                    duration: const Duration(milliseconds: 500),
                     curve: Curves.easeIn,
                   );
                 },
