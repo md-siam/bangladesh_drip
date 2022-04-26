@@ -4,6 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+import '../views/home_page.dart';
+
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
 
@@ -47,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
                 ],
               ),
               const Divider(height: 2, color: Colors.black),
-              signIn(),
+              signIn(context),
               const Divider(height: 2, color: Colors.black),
               createAccount(context),
             ]),
@@ -58,7 +60,7 @@ class _SignInPageState extends State<SignInPage> {
   }
 }
 
-Widget signIn() => Column(
+Widget signIn(BuildContext context) => Column(
       children: [
         const SizedBox(height: 20),
         Image.asset('assets/images/logo-trans_black.png'),
@@ -133,7 +135,20 @@ Widget signIn() => Column(
         ),
         const SizedBox(height: 20),
         GestureDetector(
-          onTap: () {},
+          onTap: () async {
+            await FirebaseAuth.instance
+                .signInWithEmailAndPassword(
+                  email: emailController.text,
+                  password: passwordController.text,
+                )
+                .then(
+                  (value) => Navigator.push(
+                    context,
+                    CupertinoPageRoute(builder: (context) => const HomePage()),
+                  ),
+                )
+                .onError((error, stackTrace) => print('Error: $error'));
+          },
           child: Container(
             height: 40,
             width: double.infinity,

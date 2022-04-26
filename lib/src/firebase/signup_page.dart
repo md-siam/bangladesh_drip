@@ -1,5 +1,8 @@
+import 'signin_page.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class SignUpPage extends StatefulWidget {
   const SignUpPage({Key? key}) : super(key: key);
@@ -42,7 +45,7 @@ class _SignUpPageState extends State<SignUpPage> {
                   ],
                 ),
                 const Divider(height: 2, color: Colors.black),
-                signUp(),
+                signUp(context),
               ],
             ),
           ),
@@ -52,7 +55,7 @@ class _SignUpPageState extends State<SignUpPage> {
   }
 }
 
-Widget signUp() => Column(
+Widget signUp(BuildContext context) => Column(
       children: [
         const SizedBox(height: 20),
         Stack(
@@ -201,7 +204,20 @@ Widget signUp() => Column(
         ),
         const SizedBox(height: 40),
         GestureDetector(
-          onTap: () {},
+          onTap: () async {
+            await FirebaseAuth.instance
+                .createUserWithEmailAndPassword(
+                    email: emailController.text,
+                    password: passwordController.text)
+                .then(
+                  (value) => Navigator.push(
+                    context,
+                    CupertinoPageRoute(
+                        builder: (context) => const SignInPage()),
+                  ).onError((error, stackTrace) => debugPrint('Error: $error')),
+                );
+            
+          },
           child: Container(
             height: 40,
             width: double.infinity,

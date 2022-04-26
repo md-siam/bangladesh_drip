@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "168414458449",
+    "project_id": "bangladesh-drip",
+    "storage_bucket": "bangladesh-drip.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168414458449:android:a9139b2dd567a239bcfe70",
+        "android_client_info": {
+          "package_name": "com.example.bangladesh_drip"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168414458449-btpgluaqhqcrihogio0me2agmclpqs8u.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bangladesh_drip",
+            "certificate_hash": "31c9f1eef7c119e1e312e14bc998adccc20c2c21"
+          }
+        },
+        {
+          "client_id": "168414458449-ptu78nh8br9laa1q9lucft1h4ldejhr8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBuSwIwYrtBFQXo8i2d9tkGeotHsjWr9UY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168414458449-ptu78nh8br9laa1q9lucft1h4ldejhr8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
