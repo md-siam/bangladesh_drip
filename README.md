@@ -6,17 +6,13 @@
 # Bangladesh Drip
 
 <img align="right" src="screenshots/store_icons/playstore.png" height="200"></img>
-It's a demo project from 2A IT LTD.<br>
+Practical Exam Invitation for the post of Android/ IOS Application Developer from 2A IT LTD.<br>
 
-## Getting Started
+## Packages Used
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+google_fonts: ^2.3.1 // For fonts
+video_player: ^2.4.0 // For video playing
+firebase_core: ^1.15.0 // For connecting with firebase
+firebase_auth: ^3.3.15 // For firebase authentication
+```
