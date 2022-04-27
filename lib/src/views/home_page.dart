@@ -23,30 +23,34 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    _controller0 =
-        VideoPlayerController.network(videoList[0].videoUrl.toString())
-          ..addListener(() => setState(() {}))
-          ..setLooping(true)
-          ..initialize().then((_) => _controller0.play())
-          ..setVolume(0.0);
-    _controller1 =
-        VideoPlayerController.network(videoList[1].videoUrl.toString())
-          ..addListener(() => setState(() {}))
-          ..setLooping(true)
-          ..initialize().then((_) => _controller1.play())
-          ..setVolume(0.0);
-    _controller2 =
-        VideoPlayerController.network(videoList[2].videoUrl.toString())
-          ..addListener(() => setState(() {}))
-          ..setLooping(true)
-          ..initialize().then((_) => _controller2.play())
-          ..setVolume(0.0);
-    _controller3 =
-        VideoPlayerController.network(videoList[3].videoUrl.toString())
-          ..addListener(() => setState(() {}))
-          ..setLooping(true)
-          ..initialize().then((_) => _controller3.play())
-          ..setVolume(0.0);
+    _controller0 = VideoPlayerController.network(
+        videoList[0].videoUrl.toString(),
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+      ..addListener(() => setState(() {}))
+      ..setLooping(true)
+      ..initialize().then((_) => _controller0.play())
+      ..setVolume(0.0);
+    _controller1 = VideoPlayerController.network(
+        videoList[1].videoUrl.toString(),
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+      ..addListener(() => setState(() {}))
+      ..setLooping(true)
+      ..initialize().then((_) => _controller1.play())
+      ..setVolume(0.0);
+    _controller2 = VideoPlayerController.network(
+        videoList[2].videoUrl.toString(),
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+      ..addListener(() => setState(() {}))
+      ..setLooping(true)
+      ..initialize().then((_) => _controller2.play())
+      ..setVolume(0.0);
+    _controller3 = VideoPlayerController.network(
+        videoList[3].videoUrl.toString(),
+        videoPlayerOptions: VideoPlayerOptions(mixWithOthers: true))
+      ..addListener(() => setState(() {}))
+      ..setLooping(true)
+      ..initialize().then((_) => _controller3.play())
+      ..setVolume(0.0);
   }
 
   @override

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:video_player/video_player.dart';
 
+import '../../controllers/video_controller.dart';
+
 class BasicOverlayWidget extends StatelessWidget {
   final int videoNum;
   final VideoPlayerController vp_controller;
@@ -16,6 +18,17 @@ class BasicOverlayWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMuted = vp_controller.value.volume == 0;
+    var textOnVideoStyle = GoogleFonts.montserrat(
+      fontSize: 18,
+      fontWeight: FontWeight.bold,
+      color: Colors.white,
+    );
+    var buttonTextStyle = GoogleFonts.montserrat(
+      fontSize: 12,
+      fontWeight: FontWeight.bold,
+      color: Colors.black,
+    );
+
     return Stack(
       children: [
         if (vp_controller != null && vp_controller.value.isInitialized)
@@ -57,39 +70,23 @@ class BasicOverlayWidget extends StatelessWidget {
             children: [
               if (videoNum == 0)
                 Text(
-                  'TAMBOUR STREET DIVER',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  videoList[videoNum].textOnVideo!.toString(),
+                  style: textOnVideoStyle,
                 ),
               if (videoNum == 1)
                 Text(
-                  'LV VOLT',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  videoList[videoNum].textOnVideo!.toString(),
+                  style: textOnVideoStyle,
                 ),
               if (videoNum == 2)
                 Text(
-                  'SPRING IN THE CITY',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  videoList[videoNum].textOnVideo!.toString(),
+                  style: textOnVideoStyle,
                 ),
               if (videoNum == 3)
                 Text(
-                  'SPELL ON YOU WITH LÉA\nSEYDOUX',
-                  style: GoogleFonts.montserrat(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.white,
-                  ),
+                  videoList[videoNum].textOnVideo!.toString(),
+                  style: textOnVideoStyle,
                 ),
               const SizedBox(height: 10),
               InkWell(
@@ -107,10 +104,7 @@ class BasicOverlayWidget extends StatelessWidget {
                   color: Colors.white,
                   child: Text(
                     'Discover the Collection',
-                    style: GoogleFonts.montserrat(
-                      fontSize: 12,
-                      color: Colors.black,
-                    ),
+                    style: buttonTextStyle,
                   ),
                 ),
               ),
