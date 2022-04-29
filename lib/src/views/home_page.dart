@@ -73,23 +73,23 @@ class _HomePageState extends State<HomePage> {
               const CustomAppBar(),
               PlayerWidget(
                 videoNum: videoList[0].videoNumber!.toInt(),
-                vp_controller: _controller0,
-                sc_controller: sc_controller,
+                videoController: _controller0,
+                scrollController: sc_controller,
               ),
               PlayerWidget(
                 videoNum: videoList[1].videoNumber!.toInt(),
-                vp_controller: _controller1,
-                sc_controller: sc_controller,
+                videoController: _controller1,
+                scrollController: sc_controller,
               ),
               PlayerWidget(
                 videoNum: videoList[2].videoNumber!.toInt(),
-                vp_controller: _controller2,
-                sc_controller: sc_controller,
+                videoController: _controller2,
+                scrollController: sc_controller,
               ),
               PlayerWidget(
                 videoNum: videoList[3].videoNumber!.toInt(),
-                vp_controller: _controller3,
-                sc_controller: sc_controller,
+                videoController: _controller3,
+                scrollController: sc_controller,
               ),
               const CustomBottomBar()
             ],
