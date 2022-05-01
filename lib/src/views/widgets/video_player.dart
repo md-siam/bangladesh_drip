@@ -89,16 +89,42 @@ class VideoOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMuted = videoController.value.volume == 0;
-    var _onVideoTextStyle = GoogleFonts.montserrat(
+    
+    var textStyle = GoogleFonts.montserrat(
       fontSize: 18,
       fontWeight: FontWeight.bold,
       color: Colors.white,
     );
-    var _buttonTextStyle = GoogleFonts.montserrat(
-      fontSize: 12,
-      fontWeight: FontWeight.bold,
-      color: Colors.black,
-    );
+
+    /// display `Video Title`
+    ///
+    Widget textOnVideo(int videoNum) {
+      switch (videoNum) {
+        case 0:
+          return Text(
+            videoList[0].textOnVideo!.toString(),
+            style: textStyle,
+          );
+        case 1:
+          return Text(
+            videoList[1].textOnVideo!.toString(),
+            style: textStyle,
+          );
+        case 2:
+          return Text(
+            videoList[2].textOnVideo!.toString(),
+            style: textStyle,
+          );
+        case 3:
+          return Text(
+            videoList[3].textOnVideo!.toString(),
+            style: textStyle,
+          );
+
+        default:
+          return const Text('Title Not Given');
+      }
+    }
 
     return Stack(
       children: [
@@ -139,26 +165,7 @@ class VideoOverlay extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              if (videoNum == 0)
-                Text(
-                  videoList[videoNum].textOnVideo!.toString(),
-                  style: _onVideoTextStyle,
-                ),
-              if (videoNum == 1)
-                Text(
-                  videoList[videoNum].textOnVideo!.toString(),
-                  style: _onVideoTextStyle,
-                ),
-              if (videoNum == 2)
-                Text(
-                  videoList[videoNum].textOnVideo!.toString(),
-                  style: _onVideoTextStyle,
-                ),
-              if (videoNum == 3)
-                Text(
-                  videoList[videoNum].textOnVideo!.toString(),
-                  style: _onVideoTextStyle,
-                ),
+              textOnVideo(videoNum),
               const SizedBox(height: 10),
               GestureDetector(
                 onTap: () {
@@ -175,7 +182,10 @@ class VideoOverlay extends StatelessWidget {
                   color: Colors.white,
                   child: Text(
                     'Discover the Collection',
-                    style: _buttonTextStyle,
+                    style: textStyle.copyWith(
+                      fontSize: 12,
+                      color: Colors.black,
+                    ),
                   ),
                 ),
               ),
