@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomBottomBar extends StatelessWidget {
-  const CustomBottomBar({
+class BottomBarWidget extends StatelessWidget {
+  const BottomBarWidget({
     Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    var textStyle = GoogleFonts.montserrat(color: Colors.white);
+
     return Container(
       height: 310,
       width: double.infinity,
@@ -31,66 +33,39 @@ class CustomBottomBar extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Newsletter',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Newsletter', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Contact',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Contact', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Stores',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Stores', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Sustainability',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Sustainability', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Apps',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Apps', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Follow Us',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Follow Us', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Legal & Privacy',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Legal & Privacy', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Cookies',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Cookies', style: textStyle),
               ),
               TextButton(
                 onPressed: () {},
-                child: Text(
-                  'Jobs',
-                  style: GoogleFonts.montserrat(color: Colors.white),
-                ),
+                child: Text('Jobs', style: textStyle),
               ),
             ],
           ),
@@ -98,7 +73,7 @@ class CustomBottomBar extends StatelessWidget {
           const SizedBox(height: 10),
           Text(
             '© Bangladesh Drip. Design & Developed ♥\nBY 2A IT LIMITED',
-            style: GoogleFonts.montserrat(color: Colors.grey),
+            style: textStyle.copyWith(color: Colors.grey),
             textAlign: TextAlign.center,
           )
         ],

@@ -4,41 +4,58 @@ import 'package:video_player/video_player.dart';
 
 import '../../controllers/video_controller.dart';
 
-class PlayerWidget extends StatelessWidget {
-  final int videoNum;
+class VideoPlayerWidget extends StatefulWidget {
+  final int videoNumber;
   final VideoPlayerController videoController;
   final ScrollController scrollController;
 
-  const PlayerWidget({
+  const VideoPlayerWidget({
     Key? key,
-    required this.videoNum,
+    required this.videoNumber,
     required this.videoController,
     required this.scrollController,
   }) : super(key: key);
 
-  Widget buildVideoPlayer() {
-    return AspectRatio(
-      aspectRatio: videoController.value.aspectRatio,
-      child: VideoPlayer(videoController),
-    );
+  @override
+  State<VideoPlayerWidget> createState() => _VideoPlayerWidgetState();
+}
+
+class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
+  @override
+  void initState() {
+    super.initState();
+    widget.videoController
+      ..addListener(() => setState(() {}))
+      ..setLooping(true)
+      ..setVolume(0)
+      ..initialize().then((_) => widget.videoController.play());
+  }
+
+  @override
+  void dispose() {
+    widget.videoController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
-    return videoController != null && videoController.value.isInitialized
+    return widget.videoController.value.isInitialized
         ? Container(
             alignment: Alignment.topCenter,
             child: Stack(
               children: [
-                buildVideoPlayer(),
+                AspectRatio(
+                  aspectRatio: widget.videoController.value.aspectRatio,
+                  child: VideoPlayer(widget.videoController),
+                ),
 
                 /// `information` on top of each of the video
                 ///
                 Positioned.fill(
                   child: VideoOverlay(
-                    videoNum: videoNum,
-                    videoController: videoController,
-                    scrollController: scrollController,
+                    videoNum: widget.videoNumber,
+                    videoController: widget.videoController,
+                    scrollController: widget.scrollController,
                   ),
                 ),
               ],
@@ -55,6 +72,9 @@ class PlayerWidget extends StatelessWidget {
   }
 }
 
+/// This [VideoOverlay] widget displays the control `mute` & `pause` button
+/// over each of the videos
+///
 class VideoOverlay extends StatelessWidget {
   final int videoNum;
   final VideoPlayerController videoController;
@@ -82,7 +102,7 @@ class VideoOverlay extends StatelessWidget {
 
     return Stack(
       children: [
-        if (videoController != null && videoController.value.isInitialized)
+        if (videoController.value.isInitialized)
           Positioned(
             bottom: 0.0,
             right: 0.0,

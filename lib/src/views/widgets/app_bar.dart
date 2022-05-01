@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../firebase/signin_page.dart';
 
-class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+class AppBarWidget extends StatelessWidget {
+  const AppBarWidget({
     Key? key,
   }) : super(key: key);
 
@@ -22,31 +22,19 @@ class CustomAppBar extends StatelessWidget {
           ),
           const Expanded(child: SizedBox()),
           IconButton(
-            icon: const Icon(
-              Icons.person,
-              color: Colors.grey,
-            ),
+            icon: const Icon(Icons.person, color: Colors.grey),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(
-              Icons.add_shopping_cart,
-              color: Colors.grey,
-            ),
+            icon: const Icon(Icons.add_shopping_cart, color: Colors.grey),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(
-              Icons.search,
-              color: Colors.grey,
-            ),
+            icon: const Icon(Icons.search, color: Colors.grey),
             onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(
-              Icons.login,
-              color: Colors.grey,
-            ),
+            icon: const Icon(Icons.login, color: Colors.grey),
             onPressed: () {
               Navigator.push(
                 context,
