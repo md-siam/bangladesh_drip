@@ -64,9 +64,7 @@ class _VideoPlayerWidgetState extends State<VideoPlayerWidget> {
         : const SizedBox(
             height: 200,
             child: Center(
-              child: CircularProgressIndicator(
-                color: Colors.grey,
-              ),
+              child: CircularProgressIndicator(color: Colors.grey),
             ),
           );
   }
@@ -89,7 +87,7 @@ class VideoOverlay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isMuted = videoController.value.volume == 0;
-    
+
     var textStyle = GoogleFonts.montserrat(
       fontSize: 18,
       fontWeight: FontWeight.bold,
@@ -101,25 +99,13 @@ class VideoOverlay extends StatelessWidget {
     Widget textOnVideo(int videoNum) {
       switch (videoNum) {
         case 0:
-          return Text(
-            videoList[0].textOnVideo!.toString(),
-            style: textStyle,
-          );
+          return Text(videoList[0].textOnVideo!.toString(), style: textStyle);
         case 1:
-          return Text(
-            videoList[1].textOnVideo!.toString(),
-            style: textStyle,
-          );
+          return Text(videoList[1].textOnVideo!.toString(), style: textStyle);
         case 2:
-          return Text(
-            videoList[2].textOnVideo!.toString(),
-            style: textStyle,
-          );
+          return Text(videoList[2].textOnVideo!.toString(), style: textStyle);
         case 3:
-          return Text(
-            videoList[3].textOnVideo!.toString(),
-            style: textStyle,
-          );
+          return Text(videoList[3].textOnVideo!.toString(), style: textStyle);
 
         default:
           return const Text('Title Not Given');

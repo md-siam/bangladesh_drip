@@ -16,3 +16,6 @@ video_player: ^2.4.0 // For video playing
 firebase_core: ^1.15.0 // For connecting with firebase
 firebase_auth: ^3.3.15 // For firebase authentication
 ```
+
+# Demo
+<p align="center"><img src="screenshots/gif/demo.gif"></p>
