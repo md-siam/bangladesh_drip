@@ -11,11 +11,33 @@ Practical Exam Invitation for the post of Android/ IOS Application Developer fro
 ## Packages Used
 
 ```
-google_fonts: ^2.3.1 // For fonts
-video_player: ^2.4.0 // For video playing
+google_fonts: ^2.3.1   // For fonts
+video_player: ^2.4.0   // For video playing
 firebase_core: ^1.15.0 // For connecting with firebase
 firebase_auth: ^3.3.15 // For firebase authentication
 ```
 
 # Demo
+
 <p align="center"><img src="screenshots/gif/demo.gif"></p>
+
+# File Pattern Inside The `lib` Folder
+
+```
+lib
+├── src
+│   ├── controllers
+│   │   └── video_controller.dart
+│   ├── firebase
+│   │   ├── signin_page.dart
+│   │   └── signup_page.dart
+│   ├── models
+│   │   └── user_model.dart
+│   └── views
+│       ├── widgets
+│       │   ├── app_bar.dart
+│       │   ├── bottom_bar.dart
+│       │   └── video_player.dart
+│       └── home_page.dart
+└── main.dart
+```
