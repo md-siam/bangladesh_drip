@@ -17,11 +17,11 @@ firebase_core: ^1.15.0 // For connecting with firebase
 firebase_auth: ^3.3.15 // For firebase authentication
 ```
 
-# Demo
+## Demo
 
 <p align="center"><img src="screenshots/gif/demo.gif"></p>
 
-# File Pattern Inside The `lib` Folder
+## File Pattern Inside The `lib` Folder
 
 ```
 lib
