@@ -17,7 +17,7 @@ firebase_core: ^1.15.0 // For connecting with cloud firebase
 firebase_auth: ^3.3.15 // For firebase authentication
 ```
 
-## Demo
+## Bangladesh Drip App Demo
 
 <p align="center"><img src="screenshots/gif/demo.gif"></p>
 
