@@ -31,7 +31,7 @@ lib/
 │   ├── firebase/
 │   │   ├── signin_page.dart
 │   │   └── signup_page.dart
-│   ├── models
+│   ├── models/
 │   │   └── user_model.dart
 │   └── views/
 │       ├── widgets/
