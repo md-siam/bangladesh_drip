@@ -11,8 +11,8 @@ Practical Exam Invitation for the post of Android/ IOS Application Developer fro
 ## Packages Used
 
 ```
-google_fonts: ^2.3.1   // For fonts
-video_player: ^2.4.0   // For video playing
+google_fonts: ^3.0.1   // For fonts
+video_player: ^2.4.4   // For video playing
 firebase_core: ^1.15.0 // For connecting with cloud firebase
 firebase_auth: ^3.3.15 // For firebase authentication
 ```
