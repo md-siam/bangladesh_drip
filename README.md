@@ -24,17 +24,17 @@ firebase_auth: ^3.3.15 // For firebase authentication
 ## File Pattern Inside The `lib` Folder
 
 ```
-lib
-├── src
-│   ├── controllers
+lib/
+├── src/
+│   ├── controllers/
 │   │   └── video_controller.dart
-│   ├── firebase
+│   ├── firebase/
 │   │   ├── signin_page.dart
 │   │   └── signup_page.dart
 │   ├── models
 │   │   └── user_model.dart
-│   └── views
-│       ├── widgets
+│   └── views/
+│       ├── widgets/
 │       │   ├── app_bar.dart
 │       │   ├── bottom_bar.dart
 │       │   └── video_player.dart
